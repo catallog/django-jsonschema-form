@@ -7,7 +7,7 @@ setup(
     description="Django admin widgets to render jsonschema as forms",
     name="django-jsonschema-form",
     long_description="Django admin widgets to render jsonschema as forms",
-    version="1.0.1",
+    version="1.0.2",
     url="https://www.collabo.com.br/",
     license="MIT",
     packages=find_packages(),
