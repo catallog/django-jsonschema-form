@@ -3,6 +3,20 @@ django-jsonschema-form
 
 This package renders a [jsonschema](http://json-schema.org/) as part of one django admin form.
 
+
+# Instalation
+
+Just run ```pip install django-jsonschema-form``` and then add an entry on your django project's settings.
+
+``` python
+
+INSTALLED_APPS = [
+    ...,
+    jsonschemaform,
+]
+
+```
+
 # How it works
 The core component is basicaly a django widget that receives a jsonschema and renders a form fragment.
 It uses the [JSON Editor](https://github.com/jdorn/json-editor) js library to actually render this fragment.
