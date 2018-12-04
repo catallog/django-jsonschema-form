@@ -1,11 +1,12 @@
+var $ = jQuery || django.jQuery;
 
 function loadSchema(ctx){
-  var opts = jQuery.extend({}, ctx.options, {'schema': ctx.schema});
+  var opts = $.extend({}, ctx.options, {'schema': ctx.schema});
   var editor = new JSONEditor(document.getElementById('editor-'+ctx.id), opts);
 
   editor.on('change', function(){
     var strVal = JSON.stringify(editor.getValue());
-    jQuery('#'+ctx.id).html(strVal);
+    $('#'+ctx.id).html(strVal);
   });
 }
 
