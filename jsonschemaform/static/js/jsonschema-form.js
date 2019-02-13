@@ -1,5 +1,8 @@
 var $ = jQuery || django.jQuery;
 
+var schemaContexts = [];
+
+
 function loadSchema(ctx){
   var opts = $.extend({}, ctx.options, {'schema': ctx.schema});
   var editor = new JSONEditor(document.getElementById('editor-'+ctx.id), opts);
@@ -11,8 +14,11 @@ function loadSchema(ctx){
 }
 
 function bootstrap(ev){
-  var ctx = JSON.parse(context);
-  loadSchema(ctx);
+  schemaContexts.forEach(
+    function(context) {
+      loadSchema(JSON.parse(context))
+    }
+  );
 }
 
 document.addEventListener("DOMContentLoaded", bootstrap);
