@@ -1,22 +1,19 @@
-var $ = jQuery || django.jQuery;
-
 var schemaContexts = [];
 
-
 function loadSchema(ctx){
-  var opts = $.extend({}, ctx.options, {'schema': ctx.schema});
+  var opts = Object.assign(ctx.options, {'schema': ctx.schema});
   var editor = new JSONEditor(document.getElementById('editor-'+ctx.id), opts);
 
   editor.on('change', function(){
     var strVal = JSON.stringify(editor.getValue());
-    $('#'+ctx.id).html(strVal);
+    document.getElementById(ctx.id).innerHTML = strVal;
   });
 }
 
 function bootstrap(ev){
   schemaContexts.forEach(
     function(context) {
-      loadSchema(JSON.parse(context))
+      loadSchema(JSON.parse(context));
     }
   );
 }
