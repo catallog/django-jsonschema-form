@@ -2,6 +2,6 @@
   <textarea style='display:none;' id='{{id}}' name='{{name}}'></textarea>
   <div id='editor-{{id}}' />
   <script>
-    schemaContexts.push('{{ context | safe }}');
+    schemaContexts.push('{{ context | escapejs }}');
   </script>
 </div>
