@@ -34,7 +34,7 @@ class JSONSchemaWidget(Widget):
             })
         }
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         context = self.get_context(name, value, attrs)
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)

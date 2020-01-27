@@ -1,7 +1,7 @@
 <div>
   <textarea style='display:none;' id='{{id}}' name='{{name}}'></textarea>
-  <div id='editor-{{id}}' />
+  <div id='editor-{{id}}'></div>
   <script>
-    var context = '{{ context | safe }}';
+    schemaContexts.push('{{ context | escapejs }}');
   </script>
 </div>
