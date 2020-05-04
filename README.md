@@ -1,10 +1,10 @@
 django-jsonschema-form
 ====================
 
-This package renders a [jsonschema](http://json-schema.org/) as part of one django admin form.
+This package renders a [jsonschema](http://json-schema.org/) as part of a django form.
 
 
-# Instalation
+# Installation
 
 Just run ```pip install django-jsonschema-form``` and then add an entry on your django project's settings.
 
@@ -21,7 +21,7 @@ INSTALLED_APPS = [
 The core component is basicaly a django widget that receives a jsonschema and renders a form fragment.
 It uses the [JSON Editor](https://github.com/jdorn/json-editor) js library to actually render this fragment.
 
-In practice you only have to override the admin widget like the snipet bellow.
+In practice you only have to override the admin widget like the snippet bellow.
 
 ``` python
 
@@ -63,10 +63,28 @@ class PageAdmin(admin.ModelAdmin):
     }
 
 ```
-This form will looks like
+This form will look like
 
 ![rendered Jsonschema](/images/rendered.png)
 
+### Usage in non-admin views
+
+If you are using jsonschemaform in your regular django views, rather than in the django admin, you need to add a `{{ form.media }}` template variable to the `<head>` or end of the `<body>` HTML section of your templates.
+
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+  ...
+  {{ form.media }}
+</head>
+<body>
+...
+</body>
+</html>
+```
+
+The media variable is already added in default django admin templates.
 
 # Tweaking the editor
 It is possible to configure the editor through django settings using the key JSONSCHEMAFORM.
