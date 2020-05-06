@@ -19,7 +19,7 @@ INSTALLED_APPS = [
 
 # How it works
 The core component is basicaly a django widget that receives a jsonschema and renders a form fragment.
-It uses the [JSON Editor](https://github.com/jdorn/json-editor) js library to actually render this fragment.
+It uses the [JSON Editor](https://github.com/json-editor/json-editor) js library to actually render this fragment.
 
 In practice you only have to override the admin widget like the snippet bellow.
 
@@ -91,20 +91,16 @@ It is possible to configure the editor through django settings using the key JSO
 
 ``` python
 JSONSCHEMAFORM = {
-    'css': {
-        'all': (
-            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        )
-    },
-    'options': {
-        'theme': 'bootstrap3',
-        'iconlib': 'bootstrap3',
-        'no_additional_properties': True,
-        'disable_collapse': True,
+    settings = {
+        "options": {
+            "theme": "bootstrap4",
+            "iconlib": "fontawesome5",
+            "no_additional_properties": True,
+        }
     }
 }
 
 ```
 The settings above is also the default configuration.
 
-But you can override or add any options described on [JSON Editor options](https://github.com/jdorn/json-editor#options).
+But you can override or add any options described on [JSON Editor options](https://github.com/json-editor/json-editor#options).
