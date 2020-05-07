@@ -104,3 +104,11 @@ JSONSCHEMAFORM = {
 The settings above is also the default configuration.
 
 But you can override or add any options described on [JSON Editor options](https://github.com/json-editor/json-editor#options).
+
+## Building the package
+
+The package can be built locally by running:
+
+```bash
+python setup.py sdist bdist_wheel
+```
