@@ -1,11 +1,11 @@
-var schemaContexts = [];
+let schemaContexts = [];
 
 function loadSchema(ctx){
-  var opts = Object.assign(ctx.options, {'schema': ctx.schema});
-  var editor = new JSONEditor(document.getElementById('editor-'+ctx.id), opts);
+  let opts = Object.assign(ctx.options, {'schema': ctx.schema});
+  let editor = new JSONEditor(document.getElementById('editor-'+ctx.id), opts);
 
   editor.on('change', function(){
-    var strVal = JSON.stringify(editor.getValue());
+    let strVal = JSON.stringify(editor.getValue());
     document.getElementById(ctx.id).innerHTML = strVal;
   });
 }
