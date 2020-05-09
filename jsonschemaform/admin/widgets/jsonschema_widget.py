@@ -42,6 +42,6 @@ class JSONSchemaWidget(Widget):
     class Media(object):
         js = (
             'js/jsonschema-form.js',
-            'https://cdn.jsdelivr.net/npm/@json-editor/json-editor@2.2.1/dist/jsoneditor.min.js',
+            'js/jsoneditor-2.2.1.min.js',
         )
         css = conf.get('css')

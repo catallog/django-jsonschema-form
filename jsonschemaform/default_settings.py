@@ -1,9 +1,15 @@
 settings = {
+    "css": {
+        "all": (
+            "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css",
+        )
+    },
     "options": {
         "theme": "bootstrap4",
-        "iconlib": "fontawesome5",
+        "iconlib": "fontawesome4",
         "no_additional_properties": True,
-    }
+    },
 }
 
 
