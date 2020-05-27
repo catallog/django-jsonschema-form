@@ -1,14 +1,12 @@
-django-jsonschema-form
-====================
+# django-jsonschema-form
 
 This package renders a [jsonschema](http://json-schema.org/) as part of a django form.
 
-
 # Installation
 
-Just run ```pip install django-jsonschema-form``` and then add an entry on your django project's settings.
+Just run `pip install django-jsonschema-form` and then add an entry on your django project's settings.
 
-``` python
+```python
 
 INSTALLED_APPS = [
     ...,
@@ -18,12 +16,13 @@ INSTALLED_APPS = [
 ```
 
 # How it works
+
 The core component is basicaly a django widget that receives a jsonschema and renders a form fragment.
 It uses the [JSON Editor](https://github.com/json-editor/json-editor) js library to actually render this fragment.
 
 In practice you only have to override the admin widget like the snippet bellow.
 
-``` python
+```python
 
 # Imporing Widget
 from jsonschemaform.admin.widgets.jsonschema_widget import JSONSchemaWidget
@@ -63,6 +62,7 @@ class PageAdmin(admin.ModelAdmin):
     }
 
 ```
+
 This form will look like
 
 ![rendered Jsonschema](/images/rendered.png)
@@ -71,30 +71,30 @@ This form will look like
 
 If you are using jsonschemaform in your regular django views, rather than in the django admin, you need to add a `{{ form.media }}` template variable to the `<head>` or end of the `<body>` HTML section of your templates.
 
-``` html
+```html
 <!DOCTYPE html>
 <html>
-<head>
-  ...
-  {{ form.media }}
-</head>
-<body>
-...
-</body>
+  <head>
+    ... {{ form.media }}
+  </head>
+  <body>
+    ...
+  </body>
 </html>
 ```
 
 The media variable is already added in default django admin templates.
 
 # Tweaking the editor
+
 It is possible to configure the editor through django settings using the key JSONSCHEMAFORM.
 
-``` python
+```python
 JSONSCHEMAFORM = {
     settings = {
         "css": {
             "all": (
-                "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css",
                 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css",
             )
         },
@@ -107,6 +107,7 @@ JSONSCHEMAFORM = {
 }
 
 ```
+
 The settings above is also the default configuration.
 
 But you can override or add any options described on [JSON Editor options](https://github.com/json-editor/json-editor#options).
